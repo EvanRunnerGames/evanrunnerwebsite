@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="tutorial.css">
+<title>TextTutorials::Apt Command Fix</title>
+<link rel="icon" href="images/icon.png" type="image/png">
+</head>
+<body>
+<div class="headerintro">
+
+    <h1 class="header">How to disable bitlocker on windows</h1>
+
+    <h2 class="headertext">STEP 1</h2>
+
+    <h2 class="headertext">Run powershell as administraior and paste this command</h2>
+
+
+    <div class="bubble">
+          <h2 class="command">manage-bde -status</h2>  
+    </div>
+
+    <h2 class="headertext">The output should look something like this the red is my external hard drive/usb <br>the green is my internal hard drive and the white is everything else<br></h2>
+
+    <div class="bubble-terminal">
+        <h2 class="command-terminal">BitLocker Drive Encryption: Configuration Tool version 10.0.22621<br>
+            Copyright (C) 2013 Microsoft Corporation. All rights reserved.<br>
+            <br>
+            Disk volumes that can be protected with<br>
+            BitLocker Drive Encryption:<br>
+            <span  class="command-terminal-green">
+            <span class="command-terminal-orange">
+            Volume C: []<br>   
+            </span>
+
+            [OS Volume]<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Size:                 186.26 GB<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;BitLocker Version:    None<br>
+            <span class="command-terminal-yellow">
+            &nbsp;&nbsp;&nbsp;&nbsp;Conversion Status:    Fully Encrypted<br>
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;Percentage Encrypted: 0.0%<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Encryption Method:    None<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Protection Status:    Protection Off<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Lock Status:          Unlocked<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Identification Field: None<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Key Protectors:       None Found<br>
+            </span>
+            
+            <span class="command-terminal-red">
+            <br>
+            Volume D: [Linux Mint 21_3 Cinnamon 64-bit]<br>
+            [Data Volume]<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Size:                 1816.44 GB<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;BitLocker Version:    None<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Conversion Status:    Fully Decrypted<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Percentage Encrypted: 0.0%<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Encryption Method:    None<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Protection Status:    Protection Off<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Lock Status:          Unlocked<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Identification Field: None<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Automatic Unlock:     Disabled<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Key Protectors:       None Found<br>
+            <br>
+
+
+            </span>
+
+            PS C:\Windows\system32><br>
+            </h2>
+    </div>
+
+
+
+        <h2 class="headertext">So the one that is not your USB is your internal hard drive/disk so right there where it says <span class="command-terminal-orange">volume and a letter</span> I have it as orange look at yours and that is your internal hard drive's volume letter.</h2>
+
+        <h2 class="headertext">And where it says <span class="command-terminal-yellow">fully encrypted</span> is yellow, we need to change that to fully decrypted so get that volume's letter.</h2>
+
+        <h2 class="headertext">And run this command:<br>
+        <code>Disable-BitLocker -MountPoint "C:"</code></h2>
+
+        <h2 class="headertext">For me, it is C:, but for you, it might be something different so check your internal hard drive's volume letter.</h2>
+
+        <div class="bubble">
+            <h2 class="command">manage-bde -off "C:"</h2>
+        </div>
+
+        <h2 class="headertext">And after that, run manage-bde -off "C:"<br>
+        To check if it is fully decrypted. If it is not, wait and check again later.</h2>
+
+        <h2 class="headertext">After that, BitLocker protection is off.</h2>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>
