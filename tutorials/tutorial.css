@@ -96,3 +96,32 @@ body {
     cursor: pointer;
     background-color: rgb(31, 31, 31);
 }
+
+.bubble-terminal {
+    background-color: black;
+    color: white;
+}
+
+.command-terminal {
+    color: white;
+}
+
+.command-terminal-orange {
+    color: orange;
+}
+
+.command-terminal-green {
+    color: greenyellow;
+}
+
+.command-terminal-red {
+    color: red;
+}
+
+.command-terminal-blue {
+    color: aqua;
+}
+
+.command-terminal-yellow {
+    color: yellow;
+}
