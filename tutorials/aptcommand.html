@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="tutorial.css">
+<title>TT::Apt Command Fix</title>
+<link rel="icon" href="images/icon.png" type="image/png">
+</head>
+<body>
+<div class="headerintro">
+
+    <h1 class="header">How to fix apt command text tutorial</h1>
+    <h2 class="headertext">Press CTRL + ALT + T, to open a terminal window</h2>
+
+    <h1 class="header">Commands</h1>
+
+    <h1 class="padding-box"></h1>
+
+    <div class="bubble">
+        <h2 class="command">ps -aux | grep apt</h2>
+    </div>
+
+    <h1 class="padding-box"></h1>
+
+    <div class="bubble">
+        <h2 class="command">sudo kill -9 8966</h2>
+    </div>
+
+    <h1 class="padding-box"></h1>
+
+    <div class="bubble">
+        <h2 class="command">sudo rm /var/lib/dpkg/lock-frontend</h2>
+    </div>
+
+    <h1 class="padding-box"></h1>
+
+    <div class="bubble">
+        <h2 class="command">sudo rm /var/lib/apt/lists/lock<br>sudo rm /var/cache/apt/archives/lock<br></h2>
+    </div>
+
+    <h1 class="padding-box"></h1>
+
+    <div class="bubble">
+        <h2 class="command">sudo dpkg --configure -a</h2>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

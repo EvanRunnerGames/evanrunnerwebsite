@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TT::Audio Repeater</title>
+  <link  href="tutorial.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+
+
+    #drop-zone {
+      width: 300px;
+      height: 200px;
+      border: 2px dashed #0087F7;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 200px;
+      color: #0087F7;
+      font-family: "Silkscreen", sans-serif;
+    }
+
+    #drop-zone.hover {
+      background-color: #EEE;
+      /* Light background on hover */
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    * {
+        font-family: "Silkscreen", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: white;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+    <h1 class="header">This is the Audio Repeater Tool</h1>
+    <h2 class="headertext">Just drag and drop your file and it will repeat it has to be a audio file</h2>
+
+
+  <div class="container" id="drop-zone"
+    style="margin: 0 auto; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    Drop a file here</div>
+  <audio class="container" id="audio-player" controls loop
+    style="display: block; margin: 0 auto; position: absolute; top: 69%; left: 50%; transform: translate(-50%, -50%);"></audio>
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let dropZone = document.getElementById('drop-zone');
+      let audioPlayer = document.getElementById('audio-player');
+
+      // Prevent default drag behaviors
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, preventDefaults, false);
+        document.body.addEventListener(eventName, preventDefaults, false);
+      });
+
+      // Highlight drop area when item is dragged over it
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, highlight, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, unhighlight, false);
+      });
+
+      // Handle dropped files
+      dropZone.addEventListener('drop', handleDrop, false);
+
+      function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      function highlight(e) {
+        dropZone.classList.add('hover');
+      }
+
+      function unhighlight(e) {
+        dropZone.classList.remove('hover');
+      }
+
+      function handleDrop(e) {
+        let dt = e.dataTransfer;
+        let file = dt.files[0];
+
+        playAudio(file);
+      }
+
+      function playAudio(file) {
+        let url = URL.createObjectURL(file);
+        audioPlayer.src = url;
+        audioPlayer.play();
+      }
+    });
+
+  </script>
+</body>
+
+</html>

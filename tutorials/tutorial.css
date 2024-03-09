@@ -1,0 +1,133 @@
+* {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.headertext {
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.promotext {
+    color: rgb(241, 92, 92);
+    text-align: center;
+    font-weight: bolder;
+}
+
+.text {
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.promoinnertext {
+    font-weight: bolder;
+    font-size: bolder;
+    font-size: x-large;
+}
+
+.link {
+    font-weight: bolder;
+    font-size: bolder;
+    font-size: x-large;
+    color: rgb(109, 172, 255);
+}
+
+body {
+    background-image: url(images/evanrunnerbc.png);
+    background-repeat: inherit;
+    background-size: cover;
+}
+
+.search-filter {
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.search-bar {
+    text-align: center;
+    color: black;
+}
+
+.sftext {
+    color: greenyellow;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: -10px;
+    padding-right: 25px;
+
+}
+
+.padding-box {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.bubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-color: grey;
+}
+
+.command {
+    color:black;
+    font-weight: bolder;
+}
+
+.tutorial-link {
+    background-color: grey;
+    width: max-content;
+    height: fit-content;
+}
+
+.tutorial-link:hover {
+    cursor: pointer;
+    background-color: rgb(31, 31, 31);
+}
+
+.bubble-terminal {
+    background-color: black;
+    color: white;
+}
+
+.command-terminal {
+    color: white;
+}
+
+.command-terminal-orange {
+    color: orange;
+}
+
+.command-terminal-green {
+    color: greenyellow;
+}
+
+.command-terminal-red {
+    color: red;
+}
+
+.command-terminal-blue {
+    color: aqua;
+}
+
+.command-terminal-yellow {
+    color: yellow;
+}
+
+.text-tutorials {
+    color:red;
+}

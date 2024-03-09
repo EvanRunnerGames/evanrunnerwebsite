@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="tutorial.css">
+<title>TT::BlueTooth Fix</title>
+<link rel="icon" href="images/icon.png" type="image/png">
+
+<style>
+    .padding-box {
+        padding-top: 10px;
+    padding-bottom: 10px;
+    }
+</style>
+
+</head>
+<body>
+<div class="headerintro">
+
+    <h1 class="header">How to fix bluetooth not working on linux</h1>
+    <h2 class="headertext">Press CTRL + ALT + T, to open a terminal window</h2>
+
+    <h1 class="header">Commands</h1>
+
+    <h1 class="padding-box"></h1>
+
+    <h1 class="padding-box"></h1>
+
+    <h1 class="headertext">On Ubuntu:<br></h1>
+
+    <div class="bubble">
+        <h2 class="command">
+            sudo apt install bluez* -1<br></h2>
+    </div>
+
+    <h1 class="padding-box"></h1>
+
+    <h1 class="headertext">On Fedora:<br></h1>
+
+    <div class="bubble">
+        <h2 class="command">
+            sudo dnf install bluez bluez-tools<br></h2>
+    </div>
+
+    <h1 class="headertext">On Manjaro:<br></h1>
+
+    <div class="bubble">
+        <h2 class="command">
+            sudo pacman -S bluez bluez-utils<br></h2>
+    </div>
+
+    <h1 class="headertext">And if there is anything else here are some further steps<br></h1>
+
+    <div class="bubble-terminal">
+        <h2 class="command-terminal">Install Blueman (Optional):<br>
+            Blueman is an independent project that provides a user-friendly front-end for BlueZ. You can install it separately using the following command:<br>
+            sudo apt install blueman  # For Ubuntu<br>
+            sudo dnf install blueman  # For Fedora<br>
+            sudo pacman -S blueman    # For Manjaro<br>
+            <br>
+            Start the Bluetooth Daemon:<br>
+            To have Bluetooth available each time you boot your computer, enable and start the bluetooth.service daemon. Use the following commands:<br>
+            sudo systemctl enable bluetooth.service<br>
+            sudo systemctl start bluetooth.service<br></h2>
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
